@@ -132,6 +132,11 @@ Standard: craftrules `standards/never-crash.md`.
 - **The UI is thin**: panels read engine state and act through commands. Colours come from theme
   tokens. **Never use Tauri**; egui only.
 - **Never break wasm** (`cargo xtask wasm`).
+- **Contributor credits are compiled in.** About ▸ Contributors/Models come from
+  `contributors/contributors.json`, baked into the binary by `crates/ui-egui/build.rs` (never read
+  at run time). Regenerate it with `python3 ../../craftrules/scripts/contributors.py .` and commit
+  it; never hand-edit it. GitHub usernames only; display and real names only with consent recorded
+  in craftrules `contributors/people.toml`. See `docs/contributors.md`.
 
 ## 5. Quality gates (before every commit)
 
